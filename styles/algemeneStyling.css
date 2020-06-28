@@ -1,0 +1,85 @@
+/* Fonts */
+ @import url("https://use.typekit.net/zkx6vyo.css");
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Algemene styling */
+body{
+	margin: 0;
+  background-color: #EAD5FD;
+}
+
+h1, h2, h3{
+	font-family: poppins, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	margin: 0;
+}
+
+h1{
+	font-size: 50px;
+}
+
+h2{
+	font-size: 26px;
+}
+
+h3{
+  margin: 0;
+}
+
+p{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* Styling van de box met de vlag van het land */
+#vlagArticle{
+  margin: 5% 0% 5% 0%;
+  width: 85%;
+  height: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vlagVanLand{
+  font-family: open-sans;
+  font-size: 17px;
+  color: red;
+}
+
+#vlagVanLand img{
+  border: 2px solid black;
+}
+
+
+
+/* Onderstaande class wordt aan twee ID's toegevoegd bij een foutmelding */
+.hidden {
+	display: none;
+}
+
+
+
+/* Styling van de zoekknop */
+#vergrootglasGroen{
+  position: absolute;
+  z-index: 5;
+}
+
+#zoekknop:hover{
+  box-shadow:
+  0 4px 12px rgb(67,227,109),
+  0 0.5px 1.1px rgb(67,227,109);
+}
+
+#zoekknop:active #vergrootglasGroen{
+  display: none;
+}
+
+#zoekknop:active{
+  box-shadow:
+  0 4px 12px rgb(251,157,63),
+  0 0.5px 1.1px rgb(251,157,63);
+}

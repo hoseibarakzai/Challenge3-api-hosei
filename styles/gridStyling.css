@@ -1,0 +1,982 @@
+/* Algemene styling in de grid-container en per grid-item */
+	.grid-container{
+		padding-top: 20px;
+		display: grid;
+
+		grid-template-rows: 1fr;
+    grid-gap: 20px;
+
+		width: 90%;
+		margin: 0 auto;
+
+		grid-template-columns: 1fr;
+
+		grid-template-areas:
+			"tweeRegelsTekst"
+      "zoekbalk"
+      "weerInHoofdstad"
+			"vlagVanLand"
+			"landInformatie"
+	}
+
+                              /* Styling van de grid-boxes (bij mobiele weergave) */
+                                .box1{
+                                  grid-area: tweeRegelsTekst;
+                                  display: flex;
+                                  flex-flow: column;
+                                  align-content: flex-end;
+                                  position: relative;
+                                }
+
+                                .box2{
+                                  grid-area: zoekbalk;
+                                  display: flex;
+                                  justify-content: space-between;
+                                  resize: both;
+                                  position: relative;
+                                }
+
+                                .box3{
+                                  grid-area: weerInHoofdstad;
+																	background-color: white;
+                                  position: relative;
+                                  display: flex;
+                                  justify-content: flex-start;
+                                  align-items: center;
+                                  resize: both;
+																	position: relative;
+																	flex-flow: column;
+                                }
+
+																.box4{
+                                  grid-area: vlagVanLand;
+																	background-color: white;
+                                  display: flex;
+                                  justify-content: flex-start;
+                                  align-items: center;
+                                  resize: both;
+                                  position: relative;
+																	flex-flow: column;
+                                }
+
+                                .box5{
+                                  grid-area: landInformatie;
+																	background-color: white;
+                                  display: flex;
+                                  justify-content: flex-start;
+                                  align-items: center;
+																	resize: both;
+                                  position: relative;
+	                                flex-flow: column;
+                                }
+
+																/* Schaduwen van elke box */
+																.box3:after, .box4:after, .box5:after{
+																	content: "";
+																	position: absolute;
+																	top: 0;
+																	bottom: 0;
+																	left: 0;
+																	right: 0;
+																	z-index: -1;
+																	border-radius: 20px;
+																	box-shadow:
+																	0 0.5px 1.1px rgba(0, 0, 0, 0.075),
+																	0 4px 12px rgba(0, 0, 0, 0.15);
+																	;
+																}
+
+																#country, #zoekknop{
+																	border-radius: 20px;
+																	box-shadow:
+																	0 0.5px 1.1px rgba(0, 0, 0, 0.075),
+																	0 4px 12px rgba(0, 0, 0, 0.15);
+																}
+
+	/* Algemene styling in deze media query */
+	.box3, .box4, .box5{
+		border-radius: 20px;
+	}
+
+	/* Styling in box1 */
+	h1{
+		font-size: 2em;
+	}
+
+	h2{
+		font-size: 1.35em;
+	}
+
+	h3{
+		font-size: 1.35em;
+	}
+
+	/* Styling in box2 */
+	#country{
+		height: 55px;
+		width: 68%;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		padding-left: 25px;
+		color: #FB9D3F;
+	}
+
+	::placeholder{
+		color: #7F08F2;
+	}
+
+	#zoekknop{
+		height: 55px;
+		width: 18%;
+		font-size: 18px;
+		background-color: white;
+		border: none;
+		outline: none;
+		display: flex;
+		justify-content: center;
+  	align-items: center;
+	}
+
+	.vergrootglas{
+		width: 30px;
+	}
+
+	/* Styling in box3 */
+	.titelInKleineBox{
+		width: 90%;
+		margin: 4% 0% 0% 5%;
+	}
+
+	.box3 #weerInformatieTekst p{
+		font-size: 18px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	#weerArticle{
+		width: 85%;
+		display: flex;
+		flex-flow: row;
+	}
+
+	#weerInformatiePlaatje{
+		display: flex;
+		justify-content: center;
+		flex-flow: row;
+		align-items: center;
+		width: 45%;
+	}
+
+	#weerInformatieTekst{
+		width: 55%;
+		padding-left: 5%;
+	}
+
+	#weerPlaatje img{
+		width: 120%;
+		margin-left: -15%;
+	}
+
+  /* Styling in box4 */
+	#vlagVanLand img{
+	  max-height: 75px;
+	  margin: 0px 0px -5px -5px;
+	}
+
+  /* Styling in box5 */
+	.box5{
+		margin-bottom: 7%;
+	}
+
+	.titelInGroteBox{
+		width: 100%;
+		margin: 1.5% 0% 0% 5%;
+		margin: 4% 0% 0% 15%;
+	}
+
+	.box5 #groteTekstArticle p{
+		font-size: 18px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	#groteTekstArticle{
+		display: flex;
+		flex-flow: column;
+		width: 92%;
+		margin: 1% 0% 2% 7%;
+	}
+
+	#articleLinksBoven{
+	}
+
+	#articleRechtsOnder{
+		margin-top: -3%;
+	}
+
+
+/* Kleine tablet staand */
+@media only screen and (min-width: 499px) and (max-width: 767px){
+	.grid-container{
+		padding-top: 20px;
+		display: grid;
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 20px;
+
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+
+		grid-template-areas:
+      "tweeRegelsTekst tweeRegelsTekst"
+      "zoekbalk zoekbalk"
+      "weerInHoofdstad vlagVanLand"
+      "landInformatie landInformatie"
+	}
+
+	/* Algemene styling in deze media query */
+	.titelInKleineBox{
+	  width: 90%;
+	  margin: 5% 0% 0% 10%;
+	}
+
+	.titelInGroteBox{
+	  width: 100%;
+	  margin: 3.5% 0% 0% 10%;
+	}
+
+  /* Styling in box1 */
+	h1{
+		font-size: 2.4em;
+	}
+
+	h2{
+		font-size: 1.7em;
+	}
+
+	h3{
+		font-size: 1em;
+	}
+
+	.box3 #weerInformatieTekst p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	.box5 #groteTekstArticle p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	/* Styling in box2 */
+	#country{
+		height: 55px;
+		width: 76%;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		padding-left: 35px;
+		color: #FB9D3F;
+	}
+
+	::placeholder{
+		color: #7F08F2;
+	}
+
+	#zoekknop{
+		height: 55px;
+		width: 12%;
+		font-size: 18px;
+		background-color: white;
+		border: none;
+		outline: none;
+		display: flex;
+		justify-content: center;
+  	align-items: center;
+	}
+
+	.vergrootglas{
+		width: 30px;
+	}
+
+	/* Styling in box3 */
+	#weerArticle{
+		width: 85%;
+		display: flex;
+		flex-flow: row;
+	}
+
+	#weerInformatiePlaatje{
+		display: flex;
+		justify-content: center;
+		flex-flow: row;
+		align-items: center;
+		width: 45%;
+	}
+
+	#weerInformatieTekst{
+		width: 55%;
+		padding-left: 5%;
+	}
+
+	#weerPlaatje img{
+		width: 110%;
+		margin-left: -5px;
+	}
+
+
+  /* Styling in box4 */
+	#vlagArticle{
+		margin: 5% 0% 5% 0%;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+
+	#vlagVanLand img{
+	  max-height: 75px;
+	  margin: 0px 0px -5px -5px;
+	  border: 2px solid black;
+	}
+
+
+  /* Styling in box5 */
+	.box5{
+		margin-bottom: 0%;
+	}
+
+	#groteTekstArticle{
+		display: flex;
+		flex-flow: row;
+		width: 92%;
+		margin: 1% 0% 2% 2%;
+	}
+
+	#articleLinksBoven{
+		width: 50%;
+		padding-right: 4%;
+	}
+
+	#articleRechtsOnder{
+		width: 50%;
+		margin-top: 0%;
+	}
+
+}
+
+/* Grote tablet staand */
+@media only screen and (min-width: 768px) and (max-width: 949px){
+	.grid-container{
+    padding-top: 20px;
+		display: grid;
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 20px;
+
+		width: 80%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+
+		grid-template-areas:
+			"tweeRegelsTekst tweeRegelsTekst"
+			"zoekbalk zoekbalk"
+			"weerInHoofdstad vlagVanLand"
+			"landInformatie landInformatie"
+	}
+
+	/* Algemene styling in deze media query */
+	.titelInKleineBox{
+	  width: 90%;
+	  margin: 5% 0% 0% 10%;
+	}
+
+	.titelInGroteBox{
+	  width: 100%;
+	  margin: 3.5% 0% 0% 10%;
+	}
+
+  /* Styling in box1 */
+	h1{
+		font-size: 3em;
+	}
+
+	h2{
+		font-size: 1.4em;
+	}
+
+	h3{
+		font-size: 1.3em;
+	}
+
+	.box3 #weerInformatieTekst p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	.box5 #groteTekstArticle p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	/* Styling in box2 */
+	#country{
+		height: 55px;
+		width: 80%;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		padding-left: 35px;
+		color: #FB9D3F;
+	}
+
+	::placeholder{
+		color: #7F08F2;
+	}
+
+	#zoekknop{
+		height: 55px;
+		width: 12%;
+		font-size: 18px;
+		background-color: white;
+		border: none;
+		outline: none;
+		display: flex;
+		justify-content: center;
+  	align-items: center;
+	}
+
+	.vergrootglas{
+		width: 30px;
+	}
+
+	/* Styling in box3 */
+	#weerArticle{
+		width: 85%;
+		display: flex;
+		flex-flow: row;
+		margin: 2% 0% 4% 0%;
+	}
+
+	#weerInformatiePlaatje{
+		display: flex;
+		justify-content: center;
+		flex-flow: row;
+		align-items: center;
+		width: 45%;
+	}
+
+	#weerInformatieTekst{
+		width: 55%;
+		padding-left: 5%;
+	}
+
+	#weerPlaatje img{
+		width: 110%;
+		margin-left: -5px;
+	}
+
+
+  /* Styling in box4 */
+	#vlagArticle{
+		margin: 5% 0% 5% 0%;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+
+	#vlagVanLand img{
+	  max-height: 75px;
+	  margin: 0px 0px -5px -5px;
+	}
+
+
+  /* Styling in box5 */
+	.box5{
+		margin-bottom: 0%;
+	}
+
+	#groteTekstArticle{
+		display: flex;
+		flex-flow: row;
+		width: 92%;
+		margin: 1% 0% 2% 2%;
+	}
+
+	#articleLinksBoven{
+		width: 50%;
+		padding-right: 4%;
+	}
+
+	#articleRechtsOnder{
+		width: 50%;
+		margin-top: 0%;
+	}
+
+}
+
+/* Tablet liggend */
+@media only screen and (min-width: 950px) and (max-width: 1299px){
+	.grid-container{
+    padding-top: 20px;
+		display: grid;
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 20px;
+
+		width: 60%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+
+		grid-template-areas:
+			"tweeRegelsTekst tweeRegelsTekst"
+			"zoekbalk zoekbalk"
+			"weerInHoofdstad vlagVanLand"
+			"landInformatie landInformatie"
+	}
+
+	/* Algemene styling in deze media query */
+	.titelInKleineBox{
+	  width: 90%;
+	  margin: 5% 0% 0% 10%;
+	}
+
+	.titelInGroteBox{
+	  width: 100%;
+	  margin: 3.5% 0% 0% 10%;
+	}
+
+  /* Styling in box1 */
+	h1{
+		font-size: 3em;
+	}
+
+	h2{
+		font-size: 1.4em;
+	}
+
+	h3{
+		font-size: 1.3em;
+	}
+
+	.box3 #weerInformatieTekst p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	.box5 #groteTekstArticle p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	/* Styling in box2 */
+	#country{
+		height: 55px;
+		width: 80%;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		padding-left: 35px;
+		color: #FB9D3F;
+	}
+
+	::placeholder{
+		color: #7F08F2;
+	}
+
+	#zoekknop{
+		height: 55px;
+		width: 12%;
+		font-size: 18px;
+		background-color: white;
+		border: none;
+		outline: none;
+		display: flex;
+		justify-content: center;
+  	align-items: center;
+	}
+
+	.vergrootglas{
+		width: 30px;
+	}
+
+	/* Styling in box3 */
+	#weerArticle{
+		width: 85%;
+		display: flex;
+		flex-flow: row;
+		margin: 2% 0% 4% 0%;
+	}
+
+	#weerInformatiePlaatje{
+		display: flex;
+		justify-content: center;
+		flex-flow: row;
+		align-items: center;
+		width: 45%;
+	}
+
+	#weerInformatieTekst{
+		width: 55%;
+		padding-left: 5%;
+	}
+
+	#weerPlaatje img{
+		width: 110%;
+		margin-left: -5px;
+	}
+
+
+  /* Styling in box4 */
+	#vlagArticle{
+		margin: 5% 0% 5% 0%;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+
+	#vlagVanLand img{
+	  max-height: 75px;
+	  margin: 0px 0px -5px -5px;
+	}
+
+
+  /* Styling in box5 */
+	.box5{
+		margin-bottom: 0%;
+	}
+
+	#groteTekstArticle{
+		display: flex;
+		flex-flow: row;
+		width: 92%;
+		margin: 1% 0% 2% 2%;
+	}
+
+	#articleLinksBoven{
+		width: 50%;
+		padding-right: 4%;
+	}
+
+	#articleRechtsOnder{
+		width: 50%;
+		margin-top: 0%;
+	}
+
+}
+
+/* Kleine desktop */
+@media only screen and (min-width: 1300px) and (max-width: 1919px){
+	.grid-container{
+		padding-top: 20px;
+		display: grid;
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 20px;
+
+		width: 45%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+
+		grid-template-areas:
+			"tweeRegelsTekst tweeRegelsTekst"
+			"zoekbalk zoekbalk"
+			"weerInHoofdstad vlagVanLand"
+			"landInformatie landInformatie"
+	}
+
+	/* Algemene styling in deze media query */
+	.titelInKleineBox{
+	  width: 90%;
+	  margin: 5% 0% 0% 10%;
+	}
+
+	.titelInGroteBox{
+	  width: 100%;
+	  margin: 2% 0% 0% 10%;
+	}
+
+  /* Styling in box1 */
+	h1{
+		font-size: 3em;
+	}
+
+	h2{
+		font-size: 1.4em;
+	}
+
+	h3{
+		font-size: 1.3em;
+	}
+
+	.box3 #weerInformatieTekst p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	.box5 #groteTekstArticle p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	/* Styling in box2 */
+	#country{
+		height: 55px;
+		width: 80%;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		padding-left: 35px;
+		color: #FB9D3F;
+	}
+
+	::placeholder{
+		color: ##7F08F2;
+	}
+
+	#zoekknop{
+		height: 55px;
+		width: 12%;
+		font-size: 18px;
+		background-color: white;
+		border: none;
+		outline: none;
+		display: flex;
+		justify-content: center;
+  	align-items: center;
+	}
+
+	.vergrootglas{
+		width: 30px;
+	}
+
+	/* Styling in box3 */
+	#weerArticle{
+		width: 85%;
+		display: flex;
+		flex-flow: row;
+		margin: 2% 0% 4% 0%;
+	}
+
+	#weerInformatiePlaatje{
+		display: flex;
+		justify-content: center;
+		flex-flow: row;
+		align-items: center;
+		width: 45%;
+	}
+
+	#weerInformatieTekst{
+		width: 55%;
+		padding-left: 5%;
+	}
+
+	#weerPlaatje img{
+		width: 110%;
+		margin-left: -5px;
+	}
+
+  /* Styling in box4 */
+	#vlagArticle{
+		margin: 5% 0% 5% 0%;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+
+	#vlagVanLand img{
+	  max-height: 75px;
+	  margin: 0px 0px -5px -5px;
+	}
+
+  /* Styling in box5 */
+	.box5{
+		margin-bottom: 0%;
+	}
+
+	#groteTekstArticle{
+
+		display: flex;
+		flex-flow: row;
+		width: 92%;
+		margin: 1% 0% 2% 2%;
+	}
+
+	#articleLinksBoven{
+		/* background-color: green; */
+		width: 50%;
+		padding-right: 4%;
+	}
+
+	#articleRechtsOnder{
+		/* background-color: blue; */
+		width: 50%;
+		margin-top: 0%;
+	}
+
+}
+
+/* Grote desktop */
+@media only screen and (min-width: 1920px) {
+	.grid-container{
+		padding-top: 20px;
+		display: grid;
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 20px;
+
+		width: 35%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+
+		grid-template-areas:
+			"tweeRegelsTekst tweeRegelsTekst"
+			"zoekbalk zoekbalk"
+			"weerInHoofdstad vlagVanLand"
+			"landInformatie landInformatie"
+	}
+
+	/* Algemene styling in deze media query */
+	.titelInKleineBox{
+	  width: 90%;
+	  margin: 5% 0% 0% 10%;
+	}
+
+	.titelInGroteBox{
+	  width: 100%;
+	  margin: 2% 0% 0% 10%;
+	}
+
+  /* Styling in box1 */
+	h1{
+		font-size: 3em;
+	}
+
+	h2{
+		font-size: 1.4em;
+	}
+
+	h3{
+		font-size: 1.3em;
+	}
+
+	.box3 #weerInformatieTekst p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	.box5 #groteTekstArticle p{
+		font-size: 17px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	/* Styling in box2 */
+	#country{
+		height: 55px;
+		width: 80%;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		padding-left: 35px;
+		color: #FB9D3F;
+	}
+
+	::placeholder{
+		color: #7F08F2;
+	}
+
+	#zoekknop{
+		height: 55px;
+		width: 12%;
+		font-size: 18px;
+		background-color: white;
+		border: none;
+		outline: none;
+		display: flex;
+		justify-content: center;
+  	align-items: center;
+	}
+
+	.vergrootglas{
+		width: 30px;
+	}
+
+	/* Styling in box3 */
+	#weerArticle{
+		width: 85%;
+		display: flex;
+		flex-flow: row;
+		margin: 2% 0% 4% 0%;
+	}
+
+	#weerInformatiePlaatje{
+		display: flex;
+		justify-content: center;
+		flex-flow: row;
+		align-items: center;
+		width: 45%;
+	}
+
+	#weerInformatieTekst{
+		width: 55%;
+		padding-left: 5%;
+	}
+
+	#weerPlaatje img{
+		width: 110%;
+		margin-left: -5px;
+	}
+
+  /* Styling in box4 */
+	#vlagArticle{
+		margin: 5% 0% 5% 0%;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+
+	#vlagVanLand img{
+	  max-height: 75px;
+	  margin: 0px 0px -5px -5px;
+	}
+
+  /* Styling in box5 */
+	.box5{
+		margin-bottom: 0%;
+	}
+
+	#groteTekstArticle{
+
+		display: flex;
+		flex-flow: row;
+		width: 92%;
+		margin: 1% 0% 2% 2%;
+	}
+
+	#articleLinksBoven{
+		/* background-color: green; */
+		width: 50%;
+		padding-right: 4%;
+	}
+
+	#articleRechtsOnder{
+		/* background-color: blue; */
+		width: 50%;
+		margin-top: 0%;
+	}
+
+}

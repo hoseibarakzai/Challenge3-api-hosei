@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<title>SpaceX API</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link type="text/css" href="styles/algemeneStyling.css" rel="stylesheet" />
+		<link type="text/css" href="styles/gridStyling.css" rel="stylesheet" />
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<script type="text/javascript" src="scripts/landenEnWeerScript.js" defer></script>
+	</head>
+
+	<body>
+		<main>
+
+			<div class="grid-container">
+
+				<!--  Styling in box1, het blok met de twee regels tekst. -->
+				<section class="grid-item box1">
+					<h1>Type een <span style= "color:#97626C">land</span> in</h1>
+					<h2>en <span style= "color:#644483">kom meer te weten</span> over de landplaats</h2>
+				</section>
+
+				<!-- Styling in box2, het blok met de zoekbalk en zoekknop. -->
+				<section class="grid-item box2">
+					<input type="text" name="country" id="country" placeholder="Type hier"/>
+					<div id="zoekknop" class="zoekLand" onclick="landenData();" value="Search">
+						<img src="images/vergrootglasGroen.png" alt="loop green" class="vergrootglas" id="vergrootglasGroen" draggable="false"/>
+						<img src="images/vergrootglasOranje.png" alt="loop orange" class="vergrootglas" id="vergrootglasOranje" draggable="false"/>
+					</div>
+				</section>
+
+				<!-- Styling in box3, het blok met informatie over het weer in de hoofdstad van het ingevoerde land. -->
+				<section class="grid-item box3">
+
+					<article class="titelInKleineBox">
+						<h3>Het weer in de hoofdstad</h3>
+					</article>
+
+					<article id="weerArticle">
+
+						<article id="weerInformatiePlaatje">
+							<article id="weerPlaatje"></article>
+						</article>
+
+						<article id="weerInformatieTekst">
+							<p><span id="temperatuur"></span></p>
+							<p><span id="typeWeer"></span></p>
+							<p><span id="windsnelheid"></span></p>
+						</article>
+
+					</article>
+
+				</section>
+
+				<!-- Styling in box4, het blok met de vlag van het ingevoerde land. -->
+				<section class="grid-item box4">
+
+					<article class="titelInKleineBox">
+						<h3>Vlag van het land</h3>
+					</article>
+
+					<article id="vlagArticle">
+						<article id="vlagVanLand"></article>
+					</article>
+
+				</section>
+
+				<!-- Styling in box5, het blok met informatie over het ingevoerde land. -->
+				<section class="grid-item box5">
+					<article class="titelInGroteBox">
+						<h3>Informatie over het land</h3>
+					</article>
+
+					<article id="groteTekstArticle">
+
+						<article id="articleLinksBoven">
+							<p><span id="naamVanLand"></span></p>
+							<p><span id="inheemseNaamVanLand"></span></p>
+							<p><span id="regio"></span></p>
+							<p><span id="subregio"></span></p>
+							<p><span id="hoofdstad"></span></p>
+						</article>
+
+						<article id="articleRechtsOnder">
+							<p><span id="betaalmiddelVanLand"></span></p>
+							<p><span id="betaalmiddelSymbool"></span></p>
+							<p><span id="populatie"></span></p>
+							<p><span id="oppervlakte"></span></p>
+							<p><span id="landnummer"></span></p>
+						</article>
+
+					</article>
+
+				</section>
+
+			</div>
+
+		</main>
+
+	</body>
+</html>
